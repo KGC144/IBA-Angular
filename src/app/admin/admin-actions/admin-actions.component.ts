@@ -52,14 +52,4 @@ export class AdminActionsComponent implements OnInit {
     this.router.navigate(["/account", this.account.accountId]);
   }
 
-
-  // listAllCustomers() {
-  //   this._customerService.listAllCustomers().subscribe(
-  //     data => console.log('Success!', data),
-  //     error => console.log('Error!', error)
-  //   );
-  // }
-
-
-
 }
