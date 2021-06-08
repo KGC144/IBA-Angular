@@ -1,7 +1,7 @@
 <h6>Transaction Details: </h6>
 <!-- <a href="http://localhost:4200/admin-custran/31" download="transaction">Download</a> -->
 
-<div class="row container col-lg-6" >
+<div class="row container col-lg-6">
     <div class="col-12">
         <div class="card card-margin">
             <div class="card-body">
@@ -26,19 +26,24 @@
                                                 Type
                                             </td>
                                         </thead>
-                                        <tbody >
-                                            <tr  *ngFor = "let transaction of transactions" [class.success]="checkTransactionType(transaction)" [class.failed]="!checkTransactionType(transaction)">
+                                        <tbody>
+                                            <tr *ngFor="let transaction of transactions"
+                                                [class.success]="checkTransactionType(transaction)"
+                                                [class.failed]="!checkTransactionType(transaction)">
                                                 <td>
                                                     <div class="widget-26-job-title">
                                                         <a href="#">{{transaction.transactionRemarks}}</a>
-                                                        <p class="m-0"><span class="text-muted time">{{transaction.transactionStatus}}
-                                                                </span></p>
+                                                        <p class="m-0"><span
+                                                                class="text-muted time">{{transaction.transactionStatus}}
+                                                            </span></p>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="widget-26-job-info">
                                                         <p class="type m-0">{{getDate(transaction.dateTime)}}</p>
-                                                        <p class="text-muted m-0">at <span class="location">{{getTime(transaction.dateTime)}}</span></p>
+                                                        <p class="text-muted m-0">at <span
+                                                                class="location">{{getTime(transaction.dateTime)}}</span>
+                                                        </p>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -46,29 +51,16 @@
                                                 </td>
                                                 <td>
                                                     <div class="widget-26-job-category bg-soft-base">
-                                                        <i *ngIf = "checkTransactionType(transaction)" class="indicator bg-success"></i>
-                                                        <i  *ngIf = "!checkTransactionType(transaction)" class="indicator bg-danger"></i>
-                                                        <span *ngIf = "checkTransactionType(transaction)">CREDIT</span>
-                                                        <span *ngIf = "!checkTransactionType(transaction)">DEBIT</span>
+                                                        <i *ngIf="checkTransactionType(transaction)"
+                                                            class="indicator bg-success"></i>
+                                                        <i *ngIf="!checkTransactionType(transaction)"
+                                                            class="indicator bg-danger"></i>
+                                                        <span *ngIf="checkTransactionType(transaction)">CREDIT</span>
+                                                        <span *ngIf="!checkTransactionType(transaction)">DEBIT</span>
                                                     </div>
                                                 </td>
-                                                <!-- <td>
-                                                    <div class="widget-26-job-starred">
-                                                        <a href="#">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="feather feather-star">
-                                                                <polygon
-                                                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                                                </polygon>
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                </td> -->
                                             </tr>
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -84,5 +76,6 @@
 
 
 <form>
-    <input class="btn btn-outline-info" type="button" value="Go back!" onclick="history.back()" style="margin-left: 10px">
+    <input class="btn btn-outline-info" type="button" value="Go back!" onclick="history.back()"
+        style="margin-left: 10px">
 </form>

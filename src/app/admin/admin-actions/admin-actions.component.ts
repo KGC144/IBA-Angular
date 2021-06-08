@@ -35,34 +35,30 @@ export class AdminActionsComponent implements OnInit {
     this._customerService.getAccountByCustomerId(id).subscribe({
       next: data => this.account = data,
       error: err => console.log('error', err)
-    });   
-
-  }
- 
-
-
-  getTransactionsByAccountId(){
-
-    // this._customerService.getAllTransactionsByAccountId(this.account.accountId).subscribe({
-    //   next: data => this.transactions = data,
-    //   error: err => console.log('error', err)
-    // });admin-custran
-    this.router.navigate(["/admin-custran",this.account.accountId]);
+    });
 
   }
 
-  onAccountDetails(){
+
+
+  getTransactionsByAccountId() {
+
+    this.router.navigate(["/admin-custran", this.account.accountId]);
+
+  }
+
+  onAccountDetails() {
 
     this.router.navigate(["/account", this.account.accountId]);
   }
- 
 
-  listAllCustomers(){
-    this._customerService.listAllCustomers().subscribe(
-      data => console.log('Success!', data),
-      error => console.log('Error!', error)
-    );
-}
+
+  // listAllCustomers() {
+  //   this._customerService.listAllCustomers().subscribe(
+  //     data => console.log('Success!', data),
+  //     error => console.log('Error!', error)
+  //   );
+  // }
 
 
 

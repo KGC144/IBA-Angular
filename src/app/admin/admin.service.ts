@@ -15,49 +15,33 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
 
-  getAdminById(id: number): Observable<IAdmin>{
-  
+  getAdminById(id: number): Observable<IAdmin> {
+
     return this.http.get<IAdmin>(this._url + "admin?userId=" + id).pipe(tap(data => console.log(data)), catchError(this.errorHandler));
 
   }
 
-  addAdmin(admin: IAdmin): Observable<IAdmin>{
-  
-    return this.http.post<IAdmin>(`${this._url}/admin`,admin).pipe(tap(data => console.log(data)), catchError(this.errorHandler));
 
-  }
+  listAllAdmins(): Observable<IAdmin[]> {
 
-  updateAdmin(admin: IAdmin): Observable<IAdmin>{
-  
-    return this.http.put<IAdmin>(`${this._url}/admin`,admin).pipe(tap(data => console.log(data)), catchError(this.errorHandler));
-
-  }
-
-  deleteAdmin(id: number): Observable<IAdmin>{
-    
-    return this.http.delete<IAdmin>(this._url + "admin?userId=" + id).pipe(tap(data => console.log(data)), catchError(this.errorHandler));
-  }
-
-  listAllAdmins(): Observable<IAdmin[]>{
-   
     return this.http.get<IAdmin[]>(this._url + "admins").pipe(tap(data => console.log(data)), catchError(this.errorHandler));
 
   }
 
 
-  getCustomer(id: number): Observable<ICustomer>{
+  getCustomer(id: number): Observable<ICustomer> {
 
     // customer?userId=2
     return this.http.get<ICustomer>(this._url + "customer?userId=" + id).pipe(tap(data => console.log(data)), catchError(this.errorHandler));
 
   }
 
-  errorHandler(err: HttpErrorResponse){
+  errorHandler(err: HttpErrorResponse) {
     let errorMessage = '';
 
-    if(err.error instanceof ErrorEvent){
+    if (err.error instanceof ErrorEvent) {
       errorMessage = `An error occurred: ${err.error.message}`;
-    }else{
+    } else {
       errorMessage = `server returned code: ${err.status}, error message is: ${err.message}`;
     }
     console.log(errorMessage);

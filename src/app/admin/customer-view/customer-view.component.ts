@@ -46,17 +46,5 @@ export class CustomerViewComponent implements OnInit {
     this.router.navigate(["/admin-details"]);
   }
  
-
-  deleteCustomer(id: number){
-
-    // this.id = Number(this.route.snapshot.paramMap.get('id'));
-
-    this._customerService.deleteCustomer(id).subscribe({
-      next: data=> this.customer = data,
-      error: err => console.log('error',err)
-      
-      });  
-      console.log("delete works");
-      
-  }
+  
 }
