@@ -4,35 +4,36 @@
 <head>
     <meta charset="utf-8">
 
-    <!-- <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- {{loginForm.value | json}} -->
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand">Internet Banking</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">              
+            </ul>
+            <p routerLink="/welcome">Home Page</p>
+        </div>
+    </nav>
+   
 
-    <main class="form-signin">
+    <main class="form-signin card">
 
         <h1 class="h3 mb-3 fw-normal">User sign in</h1>
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="form-floating mb-3">
-                <!-- <label>User-ID</label> -->
+            <div class="form-floating mb-3">              
                 <input [class.is-invalid]="loginForm.get('userId').invalid && loginForm.get('userId').touched"
                     formControlName="userId" type="text" class="form-control" id="floatingInput" required>
                 <label for="floatingInput">User-ID</label>
@@ -42,8 +43,7 @@
                 </div>
             </div>
 
-            <div class="form-floating mb-3">
-                <!-- <label>Password</label> -->
+            <div class="form-floating mb-3">               
                 <input [class.is-invalid]="loginForm.get('password').invalid && loginForm.get('password').touched"
                     formControlName="password" type="password" class="form-control" id="floatingPassword" required>
                 <label for="floatingPassword">Password</label>
@@ -54,25 +54,7 @@
                         be 8 charaters long</small>
                 </div>
             </div>
-
-
-
-
-            <!-- <div class="wrapper">
-                <input formControlName="role" type="radio" name="role" id="option-1" value="CUSTOMER" checked>
-                <input formControlName="role" type="radio" name="role" id="option-2" value="ADMIN">
-                <label for="option-1" class="option option-1">
-                    <div class="dot"></div>
-                    <span>Customer</span>
-                </label>
-                <label for="option-2" class="option option-2">
-                    <div class="dot"></div>
-                    <span>Admin</span>
-                </label>
-            </div> -->
-
-
-
+        
 
             <div class="mb-3">
                 <div class="form-check">
